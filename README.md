@@ -5,7 +5,7 @@
   CMS exercises solutions
 </h1>
 
-This repository contains solutions to the exercises for the CMS (Content Management Systems) course led by Daniel Jabłoński during studies on [PJAIT](https://www.pja.edu.pl/en/).
+This repository contains extension for Joomla CMS written for the project for the CMS (Content Management Systems) course led by Daniel Jabłoński during studies on [PJAIT](https://www.pja.edu.pl/en/).
 
 The following code is distributed under the [CC BY-NC](./LICENSE.md).
 
