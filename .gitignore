@@ -1,0 +1,4 @@
+data
+*.zip
+**/vendor
+**/client_secrets.json

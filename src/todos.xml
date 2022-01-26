@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="4.0" method="upgrade">
+    <name>Todos</name>
+    <creationDate>Januray 2022</creationDate>
+    <author>Yummy Noodles</author>
+    <copyright>Yummy Noodles</copyright>
+    <license>GPL v3</license>
+    <version>1.0.0</version>
+    <namespace path="src/">YummyNoodles\Component\Todos</namespace>
+
+    <files folder="site/">
+        <folder>src</folder>
+        <folder>vendor</folder>
+        <filename>client_secrets.json</filename>
+    </files>
+
+    <administration>
+        <menu link="index.php?option=com_todos">Todos</menu>
+        <files folder="admin/">
+            <folder>services</folder>
+            <folder>src</folder>
+            <folder>tmpl</folder>
+        </files>
+    </administration>
+</extension>

@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  joomla:
+    image: joomla
+    restart: always
+    links:
+      - joomladb:mysql
+    ports:
+      - 8080:80
+    volumes:
+      - "./data:/var/www/html"
+      - "./src/site:/var/www/html/components/com_todos"
+    environment:
+      JOOMLA_DB_HOST: joomladb
+      JOOMLA_DB_PASSWORD: example
+
+  joomladb:
+    image: mysql:5.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+    - "db:/var/lib/mysql"
+
+volumes:
+  db:
