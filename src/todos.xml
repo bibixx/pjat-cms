@@ -5,7 +5,7 @@
     <author>Yummy Noodles</author>
     <copyright>Yummy Noodles</copyright>
     <license>GPL v3</license>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <namespace path="src/">YummyNoodles\Component\Todos</namespace>
 
     <files folder="site/">

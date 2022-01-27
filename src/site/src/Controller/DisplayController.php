@@ -10,15 +10,14 @@ use Joomla\CMS\Factory;
 
 class DisplayController extends BaseController {
     private function getRedirectURL() {
-      $protocol = 'https';
+      $protocol = strpos($_SERVER['HTTP_HOST'], 'localhost') !== false ? 'http' : 'https';
       $host = $_SERVER['HTTP_HOST'];
       $baseUrl = "$protocol://$host";
 
       return "$baseUrl/index.php?option=com_todos";
     }
 
-    private function getArticle() {
-      $id = $_SESSION['todos_article_id'];
+    private function getArticle($id) {
       $model = \JModelLegacy::getInstance('Article', 'ContentModel');
       return $article = $model->getItem($id);
     }
@@ -34,7 +33,7 @@ class DisplayController extends BaseController {
       foreach ($fields as $key => $field)
       {
         if ($field->name === 'skladniki') {
-          $value = $field->value;
+          $value = $field->rawvalue;
           $elements = array_map($trim, explode("\n", $value));
 
           return $elements;
@@ -111,7 +110,7 @@ class DisplayController extends BaseController {
       $client = $this->getClient();
       $httpClient = $client->authorize();
 
-      $article = $this->getArticle();
+      $article = $this->getArticle($_SESSION['todos_article_id']);
 
       $ingredients = $this->getIngredients($article);
       $taskListId = $this->getTaskListId();
